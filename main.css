@@ -1,0 +1,64 @@
+.tab {
+	display: inline-block;
+	padding: 15px;
+	border: 1px solid black;
+}
+
+.skill {
+	border: 1px solid black;
+	width: 100px;
+	/* height: 45px; */
+	text-align: center;
+	padding: 15px;
+	display: inline-block;
+}
+
+.map-tile {
+	/* padding: 15px; */
+	border: 1px solid black;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 15px;
+	width: 100px;
+	height: 50px;
+	text-align: center;
+}
+
+.map-spacer {
+	margin-top: 15px;
+}
+
+.map {
+	border: 1px solid black;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+#skills-available { 
+	display: flex;
+}
+
+#skill-bar { 
+	display: flex;
+}
+
+.skill-assigned {
+	background-color: gray;
+}
+
+
+.skill-slot {
+	min-width: 100px;
+	height: 50px;
+	text-align: center;
+	padding: 10px;
+	border: 1px solid black;
+}
+
+.tab-container {
+	display: none; 
+	margin-top: 15px;
+	/* border: 1px solid red; */
+}

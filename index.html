@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	<body onload="init()">
+		<h2>Action Count: <span id="action-count"></span></h2>
+		<h2>Current Action: <span id="current-action"></span></h2>
+
+		<div class="tab" onClick="display('map-tab')">Map</div>
+		<div class="tab" onClick="display('character-tab')">Character</div>
+		<div class="tab" onClick="display('crafting-tab')">Crafting</div>
+
+		<div id="combat-tab" style="display: none">
+			<div style="display: flex">
+				<div style="display: flex; flex-wrap: wrap; width: 100%">
+					<h3 style="width: 100%; text-align: center">Combat</h3>
+					<div style="display: inline-block; margin-right: 15px; flex: 1">
+						<div>Hero HP: <b><span id="hero-hp"></span></b></div>
+						<div>Hero Next Attack: <span id="counter">0</span></div>
+					</div>
+
+					<div style="display: inline-block; flex: 1">
+						<div>Enemy HP: <b><span id="enemy-hp"></span></b></div>
+						<div>Enemy Next Attack: <span id="enemy-counter">0</span></div>
+					</div>
+				</div>
+			</div>
+
+			<div style="display: flex">
+				<div style="display: flex; flex-wrap: wrap; width: 100%">
+					<div id="skill-bar-1" style="margin-top: 15px; display: inline-block; flex: 1"></div>
+					<div id="skill-bar-2" style="margin-top: 15px; display: inline-block; flex: 1"></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="character-tab" class="tab-container">
+			<div style="display: flex; flex-wrap: wrap; width: 100%">
+				<div style="width: 50%; border: 1px dashed black"> 
+					<h3 style="width: 100%; text-align: center">Skills</h3>
+					<h5 style="width: 100%; text-align: center;">Hover over skill slot for more info.</h5>
+					<div id="skills-available"></div>
+					<hr/>
+					<div id="skill-bar"></div>
+				</div>
+
+				<div style="flex: 1">
+					<h3 style="width: 100%; text-align: center">Inventory</h3>
+					<div id="inventory">1x spider drop</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="crafting-tab" style="display: none">
+			<div>
+				<h3 style="width: 100%; text-align: center">Crafting</h3>
+				<div>Craft timer: <span id="craft-timer">0</div></span>
+				<button onClick="createSword()">Create Sword</button>
+			</div>
+		</div>
+
+		<div id="map-tab">
+			<div class="map" style="margin-top: 15px; padding: 15px">
+				<h3 id="map-title" style="text-align: center;"></h3>
+				<div id="map-tiles" style="margin-top: 15px"></div>
+			</div>
+
+		</div>
+
+
+		<div id="message" style="margin-top: 15px; position: absolute; bottom: 10px"></div>
+
+
+		<script src="main.js"></script>
+		<script src="inventory.js"></script>
+
+
+
+		<script src="skills/fighter.js"></script>
+		<script src="skills/slap.js"></script>
+		<script src="skills.js"></script>
+
+		<script src="character.js"></script> <!-- dependent on -->
+
+
+		<!-- items -->
+		<script src="combat.js"></script> <!-- dependent on skills, inventory -->
+
+		<!-- monsters -->
+		<script src="monsters.js"></script> <!-- dependent on combat, items, skills -->
+
+		
+		<script src="map.js"></script> <!-- dependent on combat, monsters -->
+		<script src="crafting.js"></script> <!-- dependent on inventory -->
+	</body>
+</html>
